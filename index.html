@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+    <script src="firebase_config.js"></script>
+    <title>🔥 Firecdn</title>
+</head>
+
+<body>
+    <div class="pageload" id="pageload"></div>
+    <div id="login" class="login_container">
+        <div class="box">
+            <a class="logo">🔥 F I R E C D N</a>
+            <input type="email" name="email" placeholder="Enter your Email" id="email">
+            <input type="password" name="password" id="password" placeholder="Enter our Password">
+            <button id="do_login" style="cursor:pointer">Login</button>
+        </div>
+    </div>
+    <div id="container">
+        <div class="container">
+            <div class="file">
+                <input type="file" id="uploadfile">
+                <span class="button">Choose</span>
+                <span class="label" id="filenameholder">No file selected</label>
+            </div>
+            <button class="actionbutton" id="button">U P L O A D</button>
+        </div>
+        <div class="footer">
+            <p id="logout_btn" style="cursor:pointer">
+                Logout
+            </p>
+            <a href="https://github.com/cachecleanerjeet/firecdn" target="_blank">🔥 F I R E C D N - <span
+                    id="kool"></span></a>
+            </div>
+            <input type="url" name="copytext" id="copytext" style="width: .1px; height: .1px; border: none;"></input>
+            <!--Clipboard API needs a visible Input Box-->
+        </div>
+</body>
+<script src="main.js"></script>
+
+</html>
