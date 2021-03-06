@@ -63,31 +63,7 @@ async function upload() { /* Upload function */
         fetch('https://time.akamai.com/') /* Fetch the time */
             .then((res) => res.text())
             .then((result) => {
-                var ref = firebase.storage().ref().child(result + Math.random().toString(36).substring(9)); /* Create an Unique ID using time and some random strings */
-                var upload = ref.putString(event.target.result, 'data_url') /* Started upload the DataUrl on Firebase */
-
-                upload.on('state_changed',
-                    (snapshot) => {
-                        actionbutton.classList.remove('actionbutton')
-                        actionbutton.classList.add('progressbutton')
-                        actionbutton.innerText = `${Math.ceil((snapshot.bytesTransferred / snapshot.totalBytes) * 100)}% Uploaded` /* Progress on the button */
-                    },
-                    (error) => { /* If error while upload (Permision Issue) */
-                        actionbutton.classList.remove('actionbutton')
-                        actionbutton.classList.add('progressbutton')
-                        actionbutton.classList.add('error')
-                        actionbutton.innerText = `Sorry, upload error !`
-                    },
-                    () => { /* When upload has been completed */
-                        upload.snapshot.ref.getDownloadURL().then((downloadurl) => { /* Get the Download URL */
-                            actionbutton.classList.remove('progressbutton')
-                            actionbutton.classList.add('actionbutton')
-                            actionbutton.innerText = `Copy Direct URL`
-                            document.getElementById('copytext').value = downloadurl /* Write the value on an almost hidden Input Box */
-                            document.getElementById("button").addEventListener("click", copy); /* Create an event listener for copy the url */
-                        });
-                    }
-                );
+                actionbutton.innerText = `This is a Demo (Disabled Upload)`
             })
             .catch((error) => { /* If Error happened whie fetching time */
                 actionbutton.classList.remove('actionbutton')
